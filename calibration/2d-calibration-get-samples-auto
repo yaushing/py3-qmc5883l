@@ -23,7 +23,6 @@ __copyright__ = "Copyright 2025 Kam Yau Shing <kam.yaushing@gmail.com>"
 __license__ = "GPLv3-or-later"
 __email__ = "kam.yaushing@gmail.com"
 __version__ = "0.1.1"
-
 # Subdivide the entire circle in sectors, to group samples.
 SECTORS_COUNT = 36
 # How many samples to get per each sector.
@@ -131,9 +130,11 @@ while True:
             sampled += 1
             completed = int(10 * (float(sampled) / SAMPLES_PER_SECTOR))
             if completed < 10:
+                # Add code here to stop motors
                 completed = str(completed)
                 attr = curses.A_NORMAL
             else:
+                # Add code here to start motors
                 completed = '#'
                 attr = curses.A_REVERSE
             print_at(DOT_X, DOT_Y, completed, attr)
@@ -142,6 +143,7 @@ while True:
             if completed_sectors >= SECTORS_COUNT:
                 break
             time.sleep(0.10)
+        else: pass # Add code here to start motors
     time.sleep(0.05)
     key = stdscr.getch()
     if key == ord('q'):
@@ -149,6 +151,7 @@ while True:
 curses.endwin()
 
 # Print raw values.
+# Add code here to stop motors
 with open(RAW_DATA_FILE, "w") as f:
     for i in range(0, SECTORS_COUNT):
         if len(SAMPLES[i]) > 0:

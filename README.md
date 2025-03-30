@@ -1,4 +1,4 @@
-# Python driver for the QMC5883L 3-Axis Magnetic Sensor
+# Python 3 driver for the QMC5883L 3-Axis Magnetic Sensor
 
 Developed for the **Raspberry Pi**, requires the **python-smbus** package
 to access the I2C bus.
@@ -6,10 +6,11 @@ to access the I2C bus.
 Usage example:
 
 ```python
-import py_qmc5883l
-sensor = py_qmc5883l.QMC5883L()
-m = sensor.get_magnet()
-print(m)
+import py3_qmc5883l
+sensor = py3_qmc5883l.QMC5883L()
+a = sensor.get_bearing()
+print(a)
+# 170.2324324
 ```
 
 The object constructor accepts some arguments, e.g. you can pass this one to
@@ -96,3 +97,4 @@ sensor.get_bearing()
 
 Read the **[module source code](py_qmc5883l/__init__.py)** and the
 **[chip Datasheet](doc/QMC5883L-Datasheet-1.0.pdf)**.
+This is a continuation of the **[deprecated Python 2 library](https://github.com/RigacciOrg/py-qmc5883l)** by Niccolo Rigacci.
