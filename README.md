@@ -18,7 +18,7 @@ switch the output range to 8 Gauss, for very strong magnetic fields which
 can otherwise overflow the sensor:
 
 ```python
-sensor = py_qmc5883l.QMC5883L(output_range=py_qmc5883l.RNG_8G)
+sensor = py3_qmc5883l.QMC5883L(output_range=py_qmc5883l.RNG_8G)
 ```
 
 The class constructor will initialize the sensor and put it into continuous
@@ -32,7 +32,7 @@ call the **QMC5883L.mode_continuous()** once, and start getting values.
 Installing from the source should be as simple as running:
 
 ```
-python setup.py install
+python3 setup.py install
 ```
 
 Make sure that the install destination directory exists, e.g. for the
